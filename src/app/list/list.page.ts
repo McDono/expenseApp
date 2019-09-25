@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { ExpenseService } from '../services/expense.service';
 
 @Component({
   selector: 'app-list',
@@ -8,20 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class ListPage implements OnInit {
 
   public items = this.exepenseService.expenses;
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
-  }
+  constructor(	private userService: UserService
+								private expenseService: expenseService) {
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+
+	ngAfterViewInit() {
+		if(!this.userService.signedIn) {
+			console.log("Not signed in");
+			this.showLogin();
+		}
+	}
+
+	showLogin(){
+		 this.router.navigate(['/login']);
+	}
+
 }
