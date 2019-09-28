@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(	private userService: UserService,
+								private router: Router) { }
 
   ngOnInit() {
   }
+
+	doLogin() {
+		this.userService.signedIn = true;
+		this.router.navigateByURL("/list");
+	}
+
+	gotoSignup() {
+		this.router.navigateByURL("/signup");
+	}
 
 }

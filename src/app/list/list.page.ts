@@ -24,7 +24,16 @@ export class ListPage implements OnInit {
 	}
 
 	showLogin(){
-		 this.router.navigate(['/login']);
+		 this.router.navigateByURL("/login");
+	}
+
+	onSelect(expense) {
+		this.expenseService.selectedExpense = expense;
+		this.router.navigateByURL("/expense-detail");
+	}
+
+	newExpense() {
+		this.router.navigateByURL("expense-new");
 	}
 
 }
