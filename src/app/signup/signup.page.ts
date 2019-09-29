@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+	doSignUp() {
+		this.router.navigateByURL("/login");
+	}
+
+	gotoLogin() {
+		this.router.navigateByURL("/login");
+	}
 
 }

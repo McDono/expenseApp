@@ -4,6 +4,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="content-background" no-bounce>
+
+	<form class="form-div" (submit)="doLogin()">
+		<ion-list>
+			<ion-item>
+				<ion-label stacked>EMAIL ADDRESS </ion-label>
+				<ion-input type="email" name="email"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label stacked>PASSWORD</ion-label>
+				<ion-input [type]="password_type" name="password"> </ion-input>
+			</ion-item>
+			<ion-item>
+				<button block class="login-btn">LOG IN</button>
+			</ion-item>
+		</ion-list>
+
+		<div class="login-div" (click)="gotoSignup()">
+			Need an account? Tap here to signup.
+		</div>
+
+	</form>
 
 </ion-content>

@@ -10,8 +10,9 @@ import { ExpenseService } from '../services/expense.service';
 export class ListPage implements OnInit {
 
   public items = this.exepenseService.expenses;
-  constructor(	private userService: UserService
+  constructor(	private userService: UserService,
 								private expenseService: expenseService) {
+	}
 
   ngOnInit() {
   }
