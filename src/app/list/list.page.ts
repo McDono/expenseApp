@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { ExpenseService } from '../services/expense.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +10,10 @@ import { ExpenseService } from '../services/expense.service';
 })
 export class ListPage implements OnInit {
 
-  public items = this.exepenseService.expenses;
+  public items = this.expenseService.expenses;
   constructor(	private userService: UserService,
-								private expenseService: expenseService) {
+								private expenseService: ExpenseService,
+								private router: Router) {
 	}
 
   ngOnInit() {
@@ -25,16 +27,16 @@ export class ListPage implements OnInit {
 	}
 
 	showLogin(){
-		 this.router.navigateByURL("/login");
+		 this.router.navigateByUrl("/login");
 	}
 
 	onSelect(expense) {
 		this.expenseService.selectedExpense = expense;
-		this.router.navigateByURL("/expense-detail");
+		this.router.navigateByUrl("/expense-detail");
 	}
 
 	newExpense() {
-		this.router.navigateByURL("expense-new");
+		this.router.navigateByUrl("expense-new");
 	}
 
 }

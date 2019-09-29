@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +17,11 @@ export class LoginPage implements OnInit {
 
 	doLogin() {
 		this.userService.signedIn = true;
-		this.router.navigateByURL("/list");
+		this.router.navigateByUrl("/list");
 	}
 
 	gotoSignup() {
-		this.router.navigateByURL("/signup");
+		this.router.navigateByUrl("/signup");
 	}
 
 }
