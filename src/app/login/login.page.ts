@@ -9,6 +9,7 @@ import { UserService } from '../services/user.service';
 })
 export class LoginPage implements OnInit {
 
+	account = {email: "", password: ""};
   constructor(	private userService: UserService,
 								private router: Router) { }
 
@@ -16,8 +17,7 @@ export class LoginPage implements OnInit {
   }
 
 	doLogin() {
-		this.userService.signedIn = true;
-		this.router.navigateByUrl("/list");
+		if((this.account))
 	}
 
 	gotoSignup() {
