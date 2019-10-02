@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ListPage implements OnInit {
 
   public items = this.expenseService.expenses;
+
   constructor(	private userService: UserService,
 								private expenseService: ExpenseService,
 								private router: Router) {
@@ -19,12 +20,12 @@ export class ListPage implements OnInit {
   ngOnInit() {
   }
 
-	ngAfterViewInit() {
-		if(!this.userService.signedIn) {
-			console.log("Not signed in");
-			this.showLogin();
-		}
-	}
+	// ngAfterViewInit() {
+	// 	if(!this.userService.signedIn) {
+	// 		console.log("Not signed in");
+	// 		this.showLogin();
+	// 	}
+	// }
 
 	showLogin(){
 		 this.router.navigateByUrl("/login");
