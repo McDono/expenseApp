@@ -51,7 +51,9 @@ export class AppComponent {
   }
 
 	logout() {
-	firebase.auth().signOut();
-	this.menu.close();
+		console.log("Loggin out...");
+		firebase.auth().signOut();
+		this.menu.close();
+		console.log("Logged out");
 	}
 }
