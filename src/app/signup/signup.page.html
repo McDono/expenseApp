@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>Sign up</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,9 +14,13 @@
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Password</ion-label>
-				<ion-input [type]="password_type" [(ngModel)]="account.password1"name="password"> </ion-input>
+				<ion-input type="password" [(ngModel)]="account.password1"name="password"> </ion-input>
 			</ion-item>
-			<ion-button expand="full" type="submit">Log in</ion-button>
+			<ion-item>
+				<ion-label position="stacked">Password (confirm)</ion-label>
+				<ion-input type="password" [(ngModel)]="account.password2" name="password2"> </ion-input>
+			</ion-item>
+			<ion-button expand="full" type="submit">Sign up</ion-button>
 		</ion-list>
 
 	</form>
