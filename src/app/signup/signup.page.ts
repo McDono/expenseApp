@@ -19,6 +19,9 @@ export class SignupPage implements OnInit {
   }
 
 	doSignUp() {
+		console.log("signing up...");
+		setTimeout(() => {}, 2000);
+		console.log("after setTimeout");
 		if ((this.account.email == "") || (this.account.password1 == "")) {
 			this.presentToast("Email & password are required");
 			return false;

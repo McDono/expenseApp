@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
   providedIn: 'root'
 })
 export class UserService {
-	signedIn = false;
+	public signedIn = false;
 	constructor(private router: Router) {
 		firebase.auth().onAuthStateChanged((user: firebase.User) => {
 			if (user) {
