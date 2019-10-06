@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListPage implements OnInit {
 
-  public items = this.expenseService.expenses;
+  // public items = this.expenseService.expenses;
 
   constructor(	private userService: UserService,
 								private expenseService: ExpenseService,
@@ -27,11 +27,12 @@ export class ListPage implements OnInit {
 	// 	}
 	// }
 
-	showLogin(){
-		 this.router.navigateByUrl("/login");
-	}
+	// showLogin(){
+	// 	 this.router.navigateByUrl("/login");
+	// }
 
 	onSelect(expense) {
+		console.log(expense);
 		this.expenseService.selectedExpense = expense;
 		this.router.navigateByUrl("/expense-detail");
 	}

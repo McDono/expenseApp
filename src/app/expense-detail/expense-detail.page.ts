@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpenseDetailPage implements OnInit {
 
-  constructor() { }
+	expense = this.expenseService.selectedExpense;
+
+  constructor(private expenseService : ExpenseService) { }
 
   ngOnInit() {
+		console.log(this.expense);
   }
 
 }
