@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import * as firebase from 'firebase';
 
 
 @Injectable({
@@ -10,17 +10,19 @@ export class ExpenseService {
 	public expenses = [];
 	ref = firebase.database().ref("expenses/");
 
-constructor() {
-	this.ref.on("value", resp => {
-		this.expenses = [];
-		this.expenses = snapshotToArray(resp);
-		console.log(this.expenses)
-	});
-}
+	constructor() {
+		this.ref.on("value", resp => {
+			this.expenses = [];
+			this.expenses = snapshotToArray(resp);
+			console.log(this.expenses)
+		});
+	}
 
-addExpense(expense) {
-	expense["user"] = firebase.auth().currentUser.email;
-	return firebase.database().ref("expenses/").push(expense);
+	addExpense(expense) {
+		expense["user"] = firebase.auth().currentUser.email;
+		return firebase.database().ref("expenses/").push(expense);
+	}
+
 }
 
 export const snapshotToArray = snapshot => {
@@ -31,6 +33,4 @@ export const snapshotToArray = snapshot => {
 		returnArr.push(item);
 	});
 	return returnArr;
-}
-
-}
+};

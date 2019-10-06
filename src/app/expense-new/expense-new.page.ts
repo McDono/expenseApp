@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ExpenseService } from '../services/expense.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-expense-new',
   templateUrl: './expense-new.page.html',
@@ -12,13 +13,14 @@ export class ExpenseNewPage implements OnInit {
 		cost: 0
 	};
 
-  constructor(	private expenseService: ExpenseService
+  constructor(	private expenseService: ExpenseService,
 								private router: Router) { }
 
   ngOnInit() {
   }
 
 	addExpense() {
+		console.log("New Expense");
 		console.log(this.newExpense);
 		this.expenseService.addExpense(this.newExpense)
 			.then(data => {

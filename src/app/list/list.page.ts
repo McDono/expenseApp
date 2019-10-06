@@ -38,7 +38,7 @@ export class ListPage implements OnInit {
 	}
 
 	newExpense() {
-		this.router.navigateByUrl("expense-new");
+		this.router.navigateByUrl("/expense-new");
 	}
 
 }
