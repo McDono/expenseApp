@@ -23,6 +23,10 @@ export class ExpenseService {
 		return firebase.database().ref("expenses/").push(expense);
 	}
 
+	deleteExpense(expense) {
+		return firebase.database().ref("expenses/" + expense.key).remove();
+	}
+
 }
 
 export const snapshotToArray = snapshot => {

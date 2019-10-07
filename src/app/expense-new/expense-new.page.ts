@@ -33,27 +33,18 @@ export class ExpenseNewPage implements OnInit {
 		console.log(this.newExpense);
 		this.expenseService.addExpense(this.newExpense)
 			.then(data => {
-				console.log("DATA : ");
 				console.log(data);
-				this.sleep(5000);
 				this.router.navigateByUrl("/list");
 			})
 			.catch(error => {
-				// throw new Error("Something went badly wrong!");
 				console.error(error);
 			});
 	}
+
+	
 
 	inputCheck() {
 		return (this.newExpense.description == "");
 	}
 
-	sleep(milliseconds) {
-	  var start = new Date().getTime();
-	  for (var i = 0; i < 1e7; i++) {
-	    if ((new Date().getTime() - start) > milliseconds){
-	      break;
-	    }
-	  }
-	}
 }
