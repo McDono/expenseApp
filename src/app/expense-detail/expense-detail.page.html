@@ -1,19 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="titlePage">Expense Detail</ion-title>
-
-		<ion-button routerLink="/" routerDirection="back">
-			Back
-		</ion-button>
-		<!-- <ion-button>
-			Delete
-
-		</ion-button> -->
+		<ion-title class="titlePage">Expense Detail</ion-title>
+		<section>
+			<ion-button routerLink="/" routerDirection="back">
+				Back
+			</ion-button>
+			<!-- <ion-button id="delete" color="danger" slot="end" (click)="deleteExpense()">
+				Delete
+			</ion-button> -->
+		</section>
 
 	</ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
 	<h4>{{expense.description}} </h4>
 	<div>{{expense.type}}</div>
 	<div>${{expense.cost}}</div>
