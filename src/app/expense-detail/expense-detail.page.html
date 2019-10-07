@@ -1,14 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Expense Detail</ion-title>
+    <ion-title class="titlePage">Expense Detail</ion-title>
+
 		<ion-button routerLink="/" routerDirection="back">
 			Back
 		</ion-button>
+		<!-- <ion-button>
+			Delete
+
+		</ion-button> -->
+
 	</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-	<h4>{{expense.type}}: {{expense.user}}</h4>
+	<h4>{{expense.description}} </h4>
+	<div>{{expense.type}}</div>
 	<div>${{expense.cost}}</div>
-	<div>{{expense.description}}</div>
+	<div>{{expense.user}}
+
+	</div>
 </ion-content>
